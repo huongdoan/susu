@@ -14,42 +14,17 @@ app.config(['$locationProvider', '$routeProvider',
   function($location, $routeProvider) {
     $routeProvider.
         when('/', {
-            templateUrl: 'partials/post.list.html',
-            controller: 'PostListCtrl'
+            templateUrl: '/view/post.list.html',
+            controller: 'PostListCtrl',
+	    access: { requiredAuthentication: true }
         }).
-        when('/post/:id', {
-            templateUrl: 'partials/post.view.html',
-            controller: 'PostViewCtrl'
-        }).
-        when('/tag/:tagName', {
-            templateUrl: 'partials/post.list.html',
-            controller: 'PostListTagCtrl'
-        }).
-        when('/admin', {
-            templateUrl: 'partials/admin.post.list.html',
-            controller: 'AdminPostListCtrl',
-            access: { requiredAuthentication: true }
-        }).
-        when('/admin/post/create', {
-            templateUrl: 'partials/admin.post.create.html',
-            controller: 'AdminPostCreateCtrl',
-            access: { requiredAuthentication: true }
-        }).
-        when('/admin/post/edit/:id', {
-            templateUrl: 'partials/admin.post.edit.html',
-            controller: 'AdminPostEditCtrl',
-            access: { requiredAuthentication: true }
-        }).
-        when('/admin/register', {
-            templateUrl: 'partials/admin.register.html',
-            controller: 'AdminUserCtrl'
-        }).
+       
         when('/admin/login', {
-            templateUrl: 'partials/admin.signin.html',
+            templateUrl: '/view/login.html',
             controller: 'AdminUserCtrl'
         }).
         when('/admin/logout', {
-            templateUrl: 'partials/admin.logout.html',
+            templateUrl: '/view/logout.html',
             controller: 'AdminUserCtrl',
             access: { requiredAuthentication: true }
         }).

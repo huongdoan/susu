@@ -1,3 +1,6 @@
+var bcrypt = require('bcrypt');
+var mongoose = require("mongoose");
+var db = require('../config/mongo_database');
 var Schema = mongoose.Schema;
  
 // User schema
@@ -33,3 +36,6 @@ User.methods.comparePassword = function(password, cb) {
 
 //Define Models
 var userModel = mongoose.model('User', User);
+
+// Export Models
+exports.userModel = userModel;

@@ -1,0 +1,41 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'path/to/node-mongodb-native' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'path/to/node-mongodb-native', null ]
+7 verbose cache add name=undefined spec="path/to/node-mongodb-native" args=["path/to/node-mongodb-native",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'path/to/node-mongodb-native',
+8 verbose parsed url   path: 'path/to/node-mongodb-native',
+8 verbose parsed url   href: 'path/to/node-mongodb-native' }
+9 silly lockFile 8b1aac59-path-to-node-mongodb-native path/to/node-mongodb-native
+10 verbose lock path/to/node-mongodb-native C:\Users\huong\AppData\Roaming\npm-cache\8b1aac59-path-to-node-mongodb-native.lock
+11 silly lockFile 8b1aac59-path-to-node-mongodb-native path/to/node-mongodb-native
+12 silly lockFile 8b1aac59-path-to-node-mongodb-native path/to/node-mongodb-native
+13 error addLocal Could not install path/to/node-mongodb-native
+14 error Error: ENOENT, stat 'E:\Project example\susu\path\to\node-mongodb-native'
+15 error If you need help, you may report this *entire* log,
+15 error including the npm and node versions, at:
+15 error     <http://github.com/npm/npm/issues>
+16 error System Windows_NT 6.1.7601
+17 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "path/to/node-mongodb-native"
+18 error cwd E:\Project example\susu
+19 error node -v v0.10.35
+20 error npm -v 1.4.28
+21 error path E:\Project example\susu\path\to\node-mongodb-native
+22 error code ENOENT
+23 error errno 34
+24 verbose exit [ 34, true ]

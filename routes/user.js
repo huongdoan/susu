@@ -57,7 +57,7 @@ exports.register = function(req, res) {
 		return res.send(400);
 	}
 
-	var user = new db.userModel();
+	var user = new userDB.userModel();
 	user.username = username;
 	user.password = password;
 
@@ -67,14 +67,14 @@ exports.register = function(req, res) {
 			return res.send(500);
 		}	
 		
-		db.userModel.count(function(err, counter) {
+		userDB.userModel.count(function(err, counter) {
 			if (err) {
 				console.log(err);
 				return res.send(500);
 			}
 
 			if (counter == 1) {
-				db.userModel.update({username:user.username}, {is_admin:true}, function(err, nbRow) {
+				userDB.userModel.update({username:user.username}, {is_admin:true}, function(err, nbRow) {
 					if (err) {
 						console.log(err);
 						return res.send(500);

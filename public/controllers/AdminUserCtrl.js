@@ -33,6 +33,8 @@ appControllers.controller('AdminUserCtrl', ['$scope', '$location', '$window', 'U
         }
 
         $scope.register = function register(username, password, passwordConfirm) {
+		
+			if(username == undefined || password == undefined || passwordConfirm == undefined) return;
             if (AuthenticationService.isAuthenticated) {
                 $location.path("/admin");
             }

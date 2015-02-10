@@ -28,6 +28,11 @@ app.config(['$locationProvider', '$routeProvider',
             controller: 'AdminUserCtrl',
             access: { requiredAuthentication: true }
         }).
+		when('/admin/register', {
+            templateUrl: '/view/register.html',
+            controller: 'AdminUserCtrl',
+            access: { requiredAuthentication: false }
+        }).
         otherwise({
             redirectTo: '/'
         });

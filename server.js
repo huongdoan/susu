@@ -39,7 +39,8 @@ app.get('/user/logout', jwt({secret: secret.secretToken}), routes.users.logout);
 //Create a new user
 app.post('/user/register', routes.users.register); 
 
-
+//default 
+app.use('/', require('./routes/index'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

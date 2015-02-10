@@ -1,6 +1,16 @@
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var mongoose = require("mongoose");
 var db = require('../config/mongo_database');
+
+mongoose.connect(db.mongodbURL, db.mongodbOptions, function (err, res) {
+    if (err) { 
+        console.log('Connection refused to ' + db.mongodbURL);
+        console.log(err);
+    } else {
+        console.log('Connection successful to: ' + db.mongodbURL);
+    }
+});
+
 var Schema = mongoose.Schema;
  
 // User schema
@@ -15,7 +25,7 @@ User.pre('save', function(next) {
  
   if (!user.isModified('password')) return next();
  
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+  bcrypt.genSalt(db.SALT_WORK_FACTOR, function(err, salt) {
     if (err) return next(err);
  
     bcrypt.hash(user.password, salt, function(err, hash) {
